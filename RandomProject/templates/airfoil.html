@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Details Form</h2>
+        <form action="{{url_for('predict')}}" method="POST">
+            <p>Frequency: <input type="text" name="Frequency"></p>
+            <p>Angle of Attack: <input type="text" name="Angle of Attack"></p>
+            <p>Chord Length: <input type="text" name="Chord Length"></p>
+            <p>Free-stream velocity: <input type="text" name="Free-stream velocity"></p>
+            <p>Suction side: <input type="text" name="Suction side"></p>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <br>    <br>   
+    {{prediction_text}}
+</body>
+</html>
